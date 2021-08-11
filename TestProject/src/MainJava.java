@@ -124,16 +124,16 @@ public class MainJava {
 		int x = Integer.highestOneBit((15 - 1) << 1);
 		int threshold = (int) Math.min(16 * 0.75, 1000 + 1);
 		System.out.println("===loop==="+x+"===threshold==="+threshold);
-		
-		double num = 111231.5585;  
+
+		double num = 111231.5585;
 	    BigDecimal b = new BigDecimal(num);
 		BigDecimal orderAmount = b.multiply(b);
 		System.out.println("===orderAmount==="+orderAmount);
 		orderAmount = orderAmount.setScale(2, BigDecimal.ROUND_HALF_UP);
 		System.out.println("===orderAmount==="+orderAmount);
 		//		mainJava.hashMap();
-		
-		
+
+
 		Date start = convertStrToDate("2019-01-16 16:00", "yyyy-MM-dd HH:mm");
 		multiArray();
 	}
