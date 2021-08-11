@@ -1,4 +1,4 @@
-package SimpleFactory;
+package design.factory.SimpleFactory;
 
 public class Printer implements Output {
 	private String[] printData=new String[MAX_CACHE_LINE];

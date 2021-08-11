@@ -1,4 +1,4 @@
-package Singleton;
+package design.Singleton;
 
 public class DoubleCheckSingleton {
 	private volatile static DoubleCheckSingleton m_instance = null;

@@ -1,4 +1,4 @@
-package Singleton;
+package design.Singleton;
 
 public class EagerSingleton {
 	private static final EagerSingleton m_instance = new EagerSingleton();

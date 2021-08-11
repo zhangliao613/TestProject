@@ -1,4 +1,4 @@
-package SimpleFactory;
+package design.factory.SimpleFactory;
 
 public class Computer {
 

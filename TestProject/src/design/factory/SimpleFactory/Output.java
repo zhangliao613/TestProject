@@ -1,4 +1,4 @@
-package SimpleFactory;
+package design.factory.SimpleFactory;
 
 public interface Output {
 	public final static Integer MAX_CACHE_LINE=3;

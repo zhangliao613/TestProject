@@ -1,4 +1,4 @@
-package Singleton;
+package design.Singleton;
 
 public enum EnumSingleton {
 /**

@@ -1,15 +1,12 @@
-package Singleton;
+package design.Singleton;
 
-public class LazySingleton {
-	private static LazySingleton m_instance = null;
+public class TestSingleton {
 
-	private LazySingleton() {
-	}
-
-	synchronized public static LazySingleton getInstance() {
+	private static TestSingleton m_instance = null;
+	public static TestSingleton getInstance() {
 		if (m_instance == null) {
 			System.out.println("===m_instance===null===");
-			m_instance = new LazySingleton();
+			m_instance = new TestSingleton();
 		}else
 		{
 			System.out.println("===m_instance===not null===");
@@ -19,8 +16,8 @@ public class LazySingleton {
 	
 	public static void main (String []args)
 	{
-		LazySingleton lazySingleton = LazySingleton.getInstance();  
-		  LazySingleton lazySingleton1 = LazySingleton.getInstance();
+		TestSingleton lazySingleton = TestSingleton.getInstance();  
+		TestSingleton lazySingleton1 = TestSingleton.getInstance();
 		  
 		  if(lazySingleton==lazySingleton1){
 		   System.out.println("同一个对象实例");
