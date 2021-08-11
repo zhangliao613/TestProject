@@ -1,0 +1,87 @@
+目录
+简介
+包含角色
+UML类图
+java实现
+说明
+1. 简介
+不属于23 种设计模式之一，是面向对象设计模式中常用的一种模式。这种模式的原理为类B和类A 是两个互相没有任何关系的类，B 具有和A 一模一样的方法和属性；并且调用B 中的方法，属性就是调用A 中同名的方法和属性。B好像就是一个受A授权委托的中介。第三方的代码不需要知道A 的存在，也不需要和A 发生直接的联系，通过B 就可以直接使用A 的功能，这样既能够使用到A 的各种功能，又能够很好的将A 保护起来了，一举两得。
+
+2. 包含角色
+2.1 抽象委派行为
+需要委派的行为
+
+2.2 委派者角色
+自己本身不实现功能，知道有哪些类可以实现，并持有实现类得对象
+
+2.3 被委托者角色
+具体实现得类
+
+2.4 客户角色
+调用方
+
+3. UML类图
+
+4. java实现
+4.1 抽象委派行为
+/**
+ * @program: pattern
+ * @description: 抽象委派行为
+ * @author: chengqj
+ * @create: 2018-07-31 19:46
+ **/
+public interface ITarge {
+    void doTarge(String commond);
+}
+
+4.2 被委托者角色
+/**
+ * @program: pattern
+ * @description: 被委托者角色
+ * @author: chengqj
+ * @create: 2018-07-31 19:47
+ **/
+public class Member implements ITarge{
+    @Override
+    public void doTarge(String commond) {
+        System.out.println("member A :" + commond);
+
+    }
+}
+
+4.3 委托者角色
+/**
+ * @program: pattern
+ * @description: 委托者
+ * @author: chengqj
+ * @create: 2018-07-31 19:46
+ **/
+public class Leader implements ITarge{
+    private Map<String,ITarge> members = new HashMap<>();
+    public Leader(){
+        members.put("加密",new Member());
+    }
+    @Override
+    public void doTarge(String commond) {
+        members.get(commond).doTarge(commond);
+    }
+}
+
+4.4 客户角色
+/**
+ * @program: pattern
+ * @description: 具体角色
+ * @author: chengqj
+ * @create: 2018-07-31 19:43
+ **/
+public class Boss {
+    public static void main(String[] args) {
+        new Leader().doTarge("加密");
+    }
+}
+
+5. 说明：
+就是静态代理和策略模式一种特殊的组合。代理模式注重的是过程， 委派模式注重的是结果,策略模式注重是可扩展（外部扩展），委派模式注重内部的灵活和复用
+————————————————
+版权声明：本文为CSDN博主「cailianren1」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/cailianren1/article/details/85217777
