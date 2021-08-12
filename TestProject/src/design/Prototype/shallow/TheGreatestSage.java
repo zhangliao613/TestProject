@@ -14,6 +14,8 @@ public class TheGreatestSage {
         System.out.println("克隆的大圣的生日是：" + copyMonkey.getBirthDate());
         System.out.println("大圣本尊跟克隆的大圣是否为同一个对象 " + (monkey == copyMonkey));
         System.out.println("p1与p3是否同一个对象：" + (monkey.getClass()==copyMonkey.getClass()));
+        System.out.println("克隆的大圣的生日是：" + monkey.getBirthDate());
+        System.out.println("大圣本尊跟克隆的大圣是否为同一个对象 " + (monkey == copyMonkey));
         System.out.println("大圣本尊持有的金箍棒 跟 克隆的大圣持有的金箍棒是否为同一个对象？ " + (monkey.getStaff() == copyMonkey.getStaff()));
     }
 
