@@ -13,6 +13,7 @@ public class Client {
             Prototype p3 = PrototypeManager.getPrototype("p1").clone();
             p3.setName("张三");
             System.out.println("第一个实例：" + p3);
+            
             //有人动态的切换了实现
             Prototype p2 = new ConcretePrototype2();
             PrototypeManager.setPrototype("p1", p2);
